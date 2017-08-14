@@ -5,10 +5,9 @@ import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
 public class Houses {
+	static Robot House = new Robot();
 public static void main(String[] args) {
 	//1. have the robot start in the bottom left corner
-   Robot House = new Robot();
-   Random randomMaker = new Random();
    House.penDown();
    House.setSpeed(120);
    House.moveTo(0, 580);
@@ -21,22 +20,7 @@ public static void main(String[] args) {
    int h2 = Integer.parseInt(h);
    for (int i = 0; i < 9; i++) {
 	   
-   int num1 = randomMaker.nextInt(500);
-   int num2 = randomMaker.nextInt(500);
-   int num3 = randomMaker.nextInt(500);   
-   House.setPenColor(num1, num2, num3);
-   House.turn(-90);
-   House.move(h2);
-   House.turn(90);
-   House.move(50);
-   House.turn(90);
-   House.move(h2);
-   House.turn(-90);
-   House.penUp();
-   House.move(11);
-   House.penDown();
-   House.setPenColor(105, 208, 89);
-   House.move(50);
+   
    }
    
 	//3. extract the piece of code that draws the house into a method. Draw 10 houses.
@@ -59,5 +43,24 @@ public static void main(String[] args) {
 
 	//9. make large houses have flat rooves
 
+}
+void drawHouse(){
+	Random randomMaker = new Random();
+	int num1 = randomMaker.nextInt(500);
+	   int num2 = randomMaker.nextInt(500);
+	   int num3 = randomMaker.nextInt(500);   
+	   House.setPenColor(num1, num2, num3);
+	   House.turn(-90);
+	   House.move(h2);
+	   House.turn(90);
+	   House.move(50);
+	   House.turn(90);
+	   House.move(h2);
+	   House.turn(-90);
+	   House.penUp();
+	   House.move(11);
+	   House.penDown();
+	   House.setPenColor(105, 208, 89);
+	   House.move(50);
 }
 }
