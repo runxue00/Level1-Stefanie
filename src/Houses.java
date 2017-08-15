@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -6,6 +7,7 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class Houses {
 	static Robot House = new Robot();
+	static Random randomMaker = new Random();
 public static void main(String[] args) {
 	//1. have the robot start in the bottom left corner
    House.penDown();
@@ -16,46 +18,49 @@ public static void main(String[] args) {
    House.setPenColor(105, 208, 89);
    House.turn(90);
    House.move(200);
-   String h = JOptionPane.showInputDialog("How tall would you like ?");
-   int h2 = Integer.parseInt(h);
    for (int i = 0; i < 9; i++) {
-	   
-   
+	   int height = randomMaker.nextInt(3);
+	   int red = randomMaker.nextInt(255);
+	   int green = randomMaker.nextInt(255);
+	   int blue = randomMaker.nextInt(255);   
+	   Color color = new Color(red, green, blue);
+	   if(height == 0){
+	       drawPointyRoof(60, color);
+	   }
+	   if(height == 1){
+		   drawPointyRoof(120, color);
+		   }
+	   if(height == 2){
+		   drawFlatRoof(250, color);
+		   }
    }
-   
-	//3. extract the piece of code that draws the house into a method. Draw 10 houses.
-
-	//4. Change the method to take int height as a parameter. Draw 9 houses of different heights
- 
-	//5. Make the method take a String instead of a height. 	
-		
-	//“small” 		60
-	//“medium”	 	120
-	//“large”			250
-
-	//6. Make the method take a color as well as a height. The houses are drawn in that color.
-
-	//[optional] Set the scene to night time by setting the background to black using Tortoise.getBackgroundWindow().setColor
-
-	//7. Give the houses peaked roofs
-
-	//8. Extract that roof code into a method “drawPointyRoof” and create a new method: “drawFlatRoof”.
-
-	//9. make large houses have flat rooves
 
 }
-void drawHouse(){
-	Random randomMaker = new Random();
-	int num1 = randomMaker.nextInt(500);
-	   int num2 = randomMaker.nextInt(500);
-	   int num3 = randomMaker.nextInt(500);   
-	   House.setPenColor(num1, num2, num3);
+static void drawFlatRoof(int height, Color color){
+	House.setPenColor(color);
 	   House.turn(-90);
-	   House.move(h2);
+	   House.move(height);
 	   House.turn(90);
 	   House.move(50);
 	   House.turn(90);
-	   House.move(h2);
+	   House.move(height);
+	   House.turn(-90);
+	   House.penUp();
+	   House.move(11);
+	   House.penDown();
+	   House.setPenColor(105, 208, 89);
+	   House.move(50);
+}
+static void drawPointyRoof(int height, Color color){
+	House.setPenColor(color);
+	   House.turn(-90);
+	   House.move(height);
+	   House.turn(45);
+	   House.move(50);
+	   House.turn(90);
+	   House.move(50);
+	   House.turn(45);
+	   House.move(height);
 	   House.turn(-90);
 	   House.penUp();
 	   House.move(11);
