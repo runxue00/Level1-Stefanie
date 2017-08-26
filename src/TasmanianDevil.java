@@ -19,7 +19,7 @@ public class TasmanianDevil {
 	}
 	
 public static void main(String[] args) {
-	TasmanianDevil t1 = new 	TasmanianDevil("Yulinda", 10, 2, 1);
+	TasmanianDevil t1 = new 	TasmanianDevil("Yolanda", 10, 2, 1);
 	JOptionPane.showMessageDialog(null, t1.toString());
 }	
 }
