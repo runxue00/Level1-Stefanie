@@ -72,8 +72,8 @@ public class Jeopardy implements ActionListener {
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-	
-
+	    firstButton.addActionListener(this);
+	    secondButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 				
 		frame.pack();
@@ -106,12 +106,17 @@ public class Jeopardy implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 		// Remove this temporary message:
-		JOptionPane.showMessageDialog(null,"pressed " + ((JButton)arg0.getSource()).getText() + " button");
+		//JOptionPane.showMessageDialog(null,"pressed " + ((JButton)arg0.getSource()).getText() + " button");
 
 		// Use the method that plays the jeopardy theme music.
-
+		playJeopardyTheme();
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
+		if(buttonPressed==firstButton){
+			//askQuestion();
+			                          
+		}
+			
 		
 			// Call the askQuestion() method
 			
@@ -129,12 +134,17 @@ public class Jeopardy implements ActionListener {
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		String answer = JOptionPane.showInputDialog("How many cats do I have presently?");
 		// Use a pop up to ask the user the question
 	
 		// If the answer is correct
-		
+		if(answer.equalsIgnoreCase("3")){
+			JOptionPane.showMessageDialog(null, "CORRECT");
+			score+=prizeMoney;
+		}
+			
 			// Increase the score by the prizeMoney
+			
 			
 			// Call the updateScore() method
 			
