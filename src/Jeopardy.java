@@ -113,7 +113,11 @@ public class Jeopardy implements ActionListener {
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
 		if(buttonPressed==firstButton){
-			//askQuestion();
+			askQuestion("What is a cat's scientific name?", "Felis Catus", 100);
+			                          
+		}
+		if(buttonPressed==secondButton){
+			askQuestion("How high can a cat fall without dying(in floors)?", "32 ", 200);
 			                          
 		}
 			
@@ -134,13 +138,19 @@ public class Jeopardy implements ActionListener {
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
-		String answer = JOptionPane.showInputDialog("How many cats do I have presently?");
+		
 		// Use a pop up to ask the user the question
-	
+		String answer = JOptionPane.showInputDialog(question);
 		// If the answer is correct
-		if(answer.equalsIgnoreCase("3")){
+		if(answer.equalsIgnoreCase(correctAnswer)){
 			JOptionPane.showMessageDialog(null, "CORRECT");
 			score+=prizeMoney;
+			updateScore();
+		}else{
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+			score-=prizeMoney;
+			updateScore();
+			JOptionPane.showMessageDialog(null, correctAnswer);
 		}
 			
 			// Increase the score by the prizeMoney
@@ -149,7 +159,9 @@ public class Jeopardy implements ActionListener {
 			// Call the updateScore() method
 			
 			// Pop up a message to tell the user they were correct
-			
+			//DONE
+		
+		
 		// Otherwise
 		
 			// Decrement the score by the prizeMoney
