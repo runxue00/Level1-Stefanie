@@ -1,4 +1,5 @@
-
+// CHANGE HEADER FROM JEOPARDY TO CATS
+// STOP JEOPARDY THEAME SONG FROM OVERLAPPING
  // Copyright Wintriss Technical Schools 2013
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
