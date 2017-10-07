@@ -1,5 +1,5 @@
-// CHANGE HEADER FROM JEOPARDY TO CATS
-// STOP JEOPARDY THEAME SONG FROM OVERLAPPING
+
+
  // Copyright Wintriss Technical Schools 2013
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
@@ -46,7 +46,7 @@ public class Jeopardy implements ActionListener {
 		JFrame frame = new JFrame();
 		quizPanel = new JPanel();
 		frame.setLayout(new BorderLayout());
-		JPanel h = createHeader("Jeopardy");
+		JPanel h = createHeader("Catz");
 		
 		
 		
@@ -62,6 +62,7 @@ public class Jeopardy implements ActionListener {
 		
 		
         firstButton = createButton("$100");
+        
 
 		quizPanel.add(firstButton);
 		
@@ -69,12 +70,18 @@ public class Jeopardy implements ActionListener {
 		// 9. Use the secondButton variable to hold a button using the createButton method
 		//createButton(secondButton);
 		secondButton = createButton("$200");
+		thirdButton = createButton("$300");
+		fourthButton = createButton("$400");
 		
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
+		quizPanel.add(thirdButton);
+		quizPanel.add(fourthButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 	    firstButton.addActionListener(this);
 	    secondButton.addActionListener(this);
+	    thirdButton.addActionListener(this);
+	    fourthButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 				
 		frame.pack();
@@ -118,7 +125,15 @@ public class Jeopardy implements ActionListener {
 			                          
 		}
 		if(buttonPressed==secondButton){
-			askQuestion("How high can a cat fall without dying(in floors)?", "32 ", 200);
+			askQuestion("How high can a cat fall without dying(in floors)?", "32", 200);
+			                          
+		}
+		if(buttonPressed==thirdButton){
+			askQuestion("How old was the longest living cat(in years)?", "38", 300);
+			                          
+		}
+		if(buttonPressed==fourthButton){
+			askQuestion("How long was the longest cat(in centimeters)?", "118", 400);
 			                          
 		}
 			
