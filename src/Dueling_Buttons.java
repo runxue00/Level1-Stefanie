@@ -9,10 +9,6 @@ import javax.swing.JPanel;
 
 public class Dueling_Buttons implements ActionListener {
 	
-	public static void main(String[] args) {
-		new Dueling_Buttons().createUI();
-	}
-
 	JButton leftButton = new JButton();
 	
 	JButton rightButton = new JButton();
@@ -22,6 +18,20 @@ public class Dueling_Buttons implements ActionListener {
 	
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		new Dueling_Buttons().createUI();  
+	}
+
+	
 
 	private void createUI() {
 		// 1. Add the panel to the frame
@@ -35,7 +45,7 @@ public class Dueling_Buttons implements ActionListener {
 		// 5. Add an action listener to the leftButton
     leftButton.addActionListener(this);
 		// 6. Add an action listener to the rightButton
-    rightButton.addActionListener(this);
+  rightButton.addActionListener(this);
     leftButton.setPreferredSize(SMALL);
     rightButton.setPreferredSize(SMALL);
 		// 7. Add the leftButton to the panel
