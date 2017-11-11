@@ -38,13 +38,19 @@ public class ChuckleClicker implements ActionListener{
 		jokeButton.addActionListener(this);
 		punchLineButton.addActionListener(this);
 		jFrame.setSize(300, 60);
+		jokeButton.setText("jokeButton");
+		punchLineButton.setText("punchLineButton");
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		 if(e.getSource() == jokeButton || e.getSource() == punchLineButton) {
-			 JOptionPane.showMessageDialog(null, "button pressed");
+		 if(e.getSource() == jokeButton) {
+			 JOptionPane.showMessageDialog(null, "Who says sticks and stones may break my bones, but words will never hurt me?");
 		 }
+		 if(e.getSource() == punchLineButton) {
+			 JOptionPane.showMessageDialog(null, "A guy who has never been hit with a dictionary.");
+		 }
+		 
 	}
 }
