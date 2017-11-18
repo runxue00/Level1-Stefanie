@@ -77,12 +77,13 @@ public class BinaryConverter implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("hello");
+		
 		
 		if(e.getSource() == Jbutton) {
 			String text = textfield.getText();
-			int i = convert(text);
-			System.out.println(i);
+			int t = convert(text);
+			String i = Integer.toString(t);
+		    textfield2.setText(i);
 			
 		}
 	}
