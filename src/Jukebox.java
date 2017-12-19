@@ -1,5 +1,7 @@
 
 // Copyright The League of Amazing Programmers, 2015
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,6 +10,7 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,25 +23,58 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
  * 
  * 2. Right click your project and add it as an External JAR (Under Java Build Path > Libraries).*/
 
-public class Jukebox implements Runnable {
-	JFrame JFrame = new JFrame();
-    JPanel JPanel = new JPanel();
+public class Jukebox implements Runnable,ActionListener {
+	JFrame jFrame = new JFrame();
+    JPanel jPanel = new JPanel();
+    JButton b1 = new JButton("Fight Song-Rachel Platten");
+	JButton b2 = new JButton("Stand By You-Rachel Platten");
+	JButton b3 = new JButton("Smoke And Fire-Sabrina Carpenter");
+	Song s1 = new Song("Fight Song.mp3");
+    Song s2 = new Song("Stand By You.mp3");
+    Song s3 = new Song("Smoke and Fire.mp3");
+    Song currentSong;
+    
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Jukebox());
 		Jukebox jukebox = new Jukebox();
 		jukebox.CreateUI();
 	}
+	public void actionPerformed(ActionEvent e) {
+		if(currentSong != null) {
+			currentSong.stop();
+		}
+		if(e.getSource() == b1) {
+			currentSong = s1;
+			s1.play();
+		}
+		if(e.getSource() == b2) {
+			currentSong = s2;
+			s2.play();
+		}
+		if(e.getSource() == b3) {
+			currentSong = s3;
+			s3.play();
+		}
+		
+}
 public void CreateUI() {
-	JFrame.add(JPanel);
+	jPanel.add(b1);
+	jPanel.add(b2);
+	jPanel.add(b3);
+	jFrame.add(jPanel);
+	jFrame.setVisible(true);
+	jFrame.pack();
+	b1.addActionListener(this);
+	b2.addActionListener(this);
 }
            public void run() {
 
 		// 3. Find an mp3 on your computer or on the Internet.
         	   
 		// 4. Create a Song
-    Song s1 = new Song("Fight Song.mp3");
+    
 		// 5. Play the Song
-   s1.play();
+    
 		/*
 		 * 6. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -140,5 +176,6 @@ class Song {
 			return this.getClass().getResourceAsStream(songAddress);
 		}
 	}
+	
 }
 
