@@ -15,54 +15,49 @@ public class WhackAMole implements ActionListener {
 	JPanel panel = new JPanel();
 	JButton mole = new JButton("Mole");
 	static Date timeAtStart = new Date();
-	static int ButtonClick = 0;
+	static int ButtonNotClick = 0;
 	static int ButtonsClicked = 0;
+
 	// 1. Make a drawButtons method that takes a random number as a parameter. It
 	// should make a GUI like this, but the “mole!” location is random.
 	// [Hint: set the size of the frame rather than packing it.]
 	public static void main(String[] args) {
-		
-		
+
 		Random rand = new Random();
 		int random = rand.nextInt(21);
 		new WhackAMole().createUI(random);
-		
-			
-		
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 		if (e.getSource().equals(mole)) {
-			speak("hi");
+			speak("Good Job!");
 			frame.dispose();
 			Random rand = new Random();
 			int random = rand.nextInt(21);
 			new WhackAMole().createUI(random);
-			ButtonClick++;
-			if(ButtonClick==10) {
+			ButtonNotClick++;
+			if (ButtonNotClick == 10) {
 				endGame(timeAtStart, 10);
 			}
-		} 
-		else {
-			if(ButtonsClicked==1) {
-			speak("You are a DORK!!!");
-			}
-			else if(ButtonsClicked==2) {
+		} else {
+			System.out.println(ButtonsClicked);
+			ButtonsClicked++;
+			if (ButtonsClicked == 1) {
+				speak("You are a DORK!!!");
+			} else if (ButtonsClicked == 2) {
 				speak("You are an IDIOT!!!");
-			}
-				else if(ButtonsClicked==3) {
-					speak("You are an MORON!!!");
-				}
-				else if(ButtonsClicked==4) {
-					speak("You are a COMPLETE WASTE OF ATOMS!!!");
-				
+			} else if (ButtonsClicked == 3) {
+				speak("You are an MORON!!!");
+			} else if (ButtonsClicked == 4) {
+				speak("You are a COMPLETE WASTE OF ATOMS!!!");
+			} else {
+				speak("Nice Try");
 			}
 		}
-		
-		
-		
+
 	}
 
 	public void createUI(int random) {
@@ -114,6 +109,5 @@ public class WhackAMole implements ActionListener {
 		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
 		sound.play();
 	}
-
 
 }
