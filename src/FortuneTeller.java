@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.applet.AudioClip;
 import java.awt.Dimension;
 import java.awt.Graphics;
