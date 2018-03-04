@@ -18,7 +18,9 @@ public class SlotMachine extends JPanel implements ActionListener{
 	private JFrame window;
 	
 	private JButton spinButton;
-	
+	private static int one = 0;
+	private static int two = 0;
+	private static int three = 0;
 	private BufferedImage orangeImage;
 	private BufferedImage bananaImage;
 	private BufferedImage cherryImage;
@@ -89,6 +91,7 @@ public class SlotMachine extends JPanel implements ActionListener{
 		private int wheelTwoInt = 0;
 		private int wheelThreeInt = 0;
 		
+		
 		Random random = new Random();
 		
 		public void actionPerformed(ActionEvent e) {
@@ -102,16 +105,27 @@ public class SlotMachine extends JPanel implements ActionListener{
 			
 			if(System.currentTimeMillis() - startTime <= reel1Time){
 				 leftImage = getImage(wheelOneInt);
+				 one = wheelOneInt;
 			}
 			
 			if(System.currentTimeMillis() - startTime <= reel2Time){
 				centerImage = getImage(wheelTwoInt);
+				two = wheelTwoInt;
 			}
 			
 			if(System.currentTimeMillis() - startTime <= reel3Time){
 				rightImage = getImage(wheelThreeInt);
+				three = wheelThreeInt;
 			}else{
+				System.out.println(wheelOneInt + " " + wheelTwoInt + " " + wheelThreeInt);
+				if(one==two  && two==three) {
+					money += 100;
+				}
+				else {
+					money-=100;
+				}
 				reelTimer.stop();
+				
 			}
 			
 			
