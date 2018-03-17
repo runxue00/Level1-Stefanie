@@ -44,8 +44,11 @@ public class JackInTheBox implements ActionListener {
 		if (e.getSource() == button) {
 			times++;
 		}
+		if(times<limit) {
+			System.out.println("Turning...");
+		}
 		if (times == limit) {
-			JOptionPane.showMessageDialog(null, "Nice persistence");
+			JOptionPane.showMessageDialog(null, "*Pop*");
 			limit = r.nextInt(10);
 			times=0;
 		}
