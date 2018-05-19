@@ -5,6 +5,7 @@
 /ChuckleClicker.class
 /CowNoises.wav
 /CowTimer.class
+/Cup.class
 /Cuteness_tv.class
 /Disney_Characters.class
 /Doughnut_Donut.class
@@ -12,34 +13,13 @@
 /Dueling_Buttons.class
 /Fight Song.mp3
 /FortuneTeller.class
-/JackInTheBox.jpg
-/Pencil.class
-/Rain_Game/
-/Ruler.class
-/Sabrina.mp3
-/Smoke and Fire.mp3
-/Stand By You.mp3
-/Supply.class
-/Textbook.class
-/banana.jpg
-/cherry.png
-/commons-logging-1.1.3-2 (2).jar
-/drum sound.wav
-/drum2 sound.wav
-/drum2.jpg
-/gypsy.jpg
-/javazoom.jar
-/orange.png
-/robot.jar
-/sound.wav
-/twitter4j-core-3.0.5-2 (1).jar
-/Cup.class
 /GetLatestTweet.class
 /Harry_Potter.class
 /Houses.class
 /Human.class
 /IntroToMethodWriting.class
 /JackInTheBox.class
+/JackInTheBox.jpg
 /Jasmine.class
 /Jeopardy.class
 /Jukebox.class
@@ -54,26 +34,47 @@
 /MyOwnClassForNetflix.class
 /Name.class
 /NetflixQueue.class
+/Pencil.class
 /Photo_Quiz.class
 /Platypus.class
 /Popcorn.class
 /Practice_Test.class
+/Rain_Game/
 /Robot.class
 /RobotArmy.class
+/Ruler.class
+/Sabrina.mp3
 /SeaCreatures.class
 /ShoppingList.class
 /Simple_Calculator.class
 /SlotMachine$TimerUpdate.class
 /SlotMachine.class
+/Smoke and Fire.mp3
 /Smurf.class
 /Smurf_Runner_Class.class
 /Song$1.class
 /Song.class
 /Spongebob.class
+/Stand By You.mp3
+/Supply.class
 /TasmanianDevil.class
 /TeaBag.class
 /TeaParty.class
 /TeaPartyTest.class
+/Textbook.class
 /TypingTutor.class
 /WhackAMole.class
+/banana.jpg
+/cherry.png
+/commons-logging-1.1.3-2 (2).jar
+/drum sound.wav
+/drum2 sound.wav
+/drum2.jpg
 /drumKit.class
+/gypsy.jpg
+/javazoom.jar
+/orange.png
+/robot.jar
+/sound.wav
+/twitter4j-core-3.0.5-2 (1).jar
+/Jokes.class
